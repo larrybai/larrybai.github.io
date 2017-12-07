@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* As a professional engineer with computer science degree,</span><br />
+				<span class="space"/><span class="comments">* I write some code to celebrate our 7 months anniversary.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				亲爱的朋朋，转眼间我们在一起已经7个月了，时间真是过得飞快。现在每天的感觉都是能吃到你做的东西，特别好吃特别幸福。在这么多好吃的面前，你又是这么可爱，我怎么可能起到监督你的作用。把你养的肥肥的，多可爱，手感也好，也健康。每天都会发现你的新优点，觉得你越来越好了，全上海最漂亮最可爱的人，怎么会有这么完美的人。<br /><br />
+				不过还是有一点是要改善的，就是头太小了，可能有点蠢。但是也很难治了，只能依靠我了，靠我强大的智慧来帮你解决问题。真是一段幸福的时光呀，接下去的生活我们还会一起经历，无比期待。开启朋朋丁满历险记...<br /><br />
+				<img src="ppdm.jpeg"/>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Minyue, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- hackerzhou</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 4, 8);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
